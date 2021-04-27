@@ -33,4 +33,19 @@ button.on("click", () => {
     var filterDate = tableData.filter(tableData => tableData.datetime === inputDate);
     
 
+    $tbody.html("");
 
+
+    let response = {
+        filterDate
+    }
+
+
+    if(response.filterDate.length !== 0) {
+        addData(filterDate);
+    }
+    
+        else {
+            $tbody.append("tr").append("td").text("No Sightings Here, Bummer");
+        }
+})
