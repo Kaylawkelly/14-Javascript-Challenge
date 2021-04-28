@@ -10,7 +10,7 @@ var inputFieldDate = d3.select("#datetime")
 var inputFieldCity = d3.select("#city")
 
 //columns
-var columns = ["datetime","city", "state", "country", "shape"]
+var columns = ["datetime","city", "state", "country", "shape","Duration","Comments"]
 
 //data into the HTML
 var addData = (dataInput) => {
