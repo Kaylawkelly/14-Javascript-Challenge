@@ -47,9 +47,6 @@ button.on("click", () => {
         addData(filterCombinedData);
     }
 
-    // else if(response.filterCity.length !== 0){
-    //     addData(filterCity);
-    // }
         else if(response.filterCombinedData.length === 0 && ((response.filterDate.length !== 0 || response.filterCity.length !== 0))) {
             addData(filterDate) || addData(filterCity);
         }
