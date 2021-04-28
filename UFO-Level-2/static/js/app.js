@@ -44,14 +44,14 @@ button.on("click", () => {
     }
     
     if(response.filterCombinedData.length !== 0) {
-        addData(filterCombinedData);
+        addData(filterCombinedData)
     }
 
         else if(response.filterCombinedData.length === 0 && ((response.filterDate.length !== 0 || response.filterCity.length !== 0))) {
-            addData(filterDate) || addData(filterCity);
+            addData(filterDate) || addData(filterCity)
         }
 
         else {
-            $tbody.append("tr").append("td").text("No Sightings Here...Move On...");
+            $tbody.append("tr").append("td").text("No Sightings Here, Bummer")
         }
 })
