@@ -26,7 +26,6 @@ addData(tableData)
 button.on("click", () => {
 
     d3.event.preventDefault()
-    
 
     var inputDate = inputFieldDate.property("value").trim()
 
@@ -43,3 +42,23 @@ button.on("click", () => {
     let response = {
         filterDate, filterCity, filterCombinedData
     }
+    
+    if(response.filterCombinedData.length !== 0) {
+        addData(filterCombinedData);
+    }
+
+    // else if(response.filterCity.length !== 0){
+    //     addData(filterCity);
+    // }
+        else if(response.filterCombinedData.length === 0 && ((response.filterDate.length !== 0 || response.filterCity.length !== 0))) {
+            addData(filterDate) || addData(filterCity);
+        }
+
+        // else if(response.filterCombinedDateState.length === 0 && ((response.filterDate.length !== 0 || response.filterState.length !== 0))) {
+        //     addData(filterDate) || addData(filterState);
+        // }
+
+        else {
+            $tbody.append("tr").append("td").text("No Sightings Here...Move On...");
+        }
+})
