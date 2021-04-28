@@ -51,10 +51,6 @@ button.on("click", () => {
             addData(filterDate) || addData(filterCity);
         }
 
-        // else if(response.filterCombinedDateState.length === 0 && ((response.filterDate.length !== 0 || response.filterState.length !== 0))) {
-        //     addData(filterDate) || addData(filterState);
-        // }
-
         else {
             $tbody.append("tr").append("td").text("No Sightings Here...Move On...");
         }
