@@ -15,7 +15,7 @@ var columns = ["datetime","city", "state", "country", "shape"]
 //data into the HTML
 var addData = (dataInput) => {
     dataInput.forEach(ufoSightings => {
-        var row = $tbody.append("tr");
+        var row = $tbody.append("tr")
         columns.forEach(column => row.append("td").text(ufoSightings[column])
         )
     });
@@ -25,9 +25,21 @@ addData(tableData)
 //Filter
 button.on("click", () => {
 
-    d3.event.preventDefault();
+    d3.event.preventDefault()
     
 
-    var inputDate = inputFieldDate.property("value").trim();
+    var inputDate = inputFieldDate.property("value").trim()
 
-    var inputCity = inputFieldCity.property("value").toLowerCase().trim();
+    var inputCity = inputFieldCity.property("value").toLowerCase().trim()
+
+    var filterDate = tableData.filter(tableData => tableData.datetime === inputDate)
+    
+    var filterCity = tableData.filter(tableData => tableData.city === inputCity)
+    
+    var filterCombinedData = tableData.filter(tableData => tableData.datetime === inputDate && tableData.city === inputCity)
+    
+    $tbody.html("")
+
+    let response = {
+        filterDate, filterCity, filterCombinedData
+    }
